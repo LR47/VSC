@@ -1,7 +1,11 @@
-html, body {
-  margin: 0;
-  padding: 0;
+html,body{
+  background-color: rgb(139, 189, 255);
 }
-canvas {
+
+canvas{
   display: block;
+}
+
+#canvasContainer{
+  margin: 50px;
 }
