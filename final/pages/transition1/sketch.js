@@ -27,7 +27,7 @@ function setup() {
 
 function draw() {
   background(220);
-  text("This level's content has spoilers(plus I haven't finished the graphics yet), but you can already jump on different platforms!",100,100)
+  text("I haven't finished the graphics yet, but you can already jump on different platforms!",100,100)
   if(p.x>=300){
     translate(-p.x+300,0)
   }
