@@ -1,0 +1,93 @@
+body {
+  background: linear-gradient(to bottom, black 200px,white);
+  
+  margin: 0;
+  padding: 0;
+  
+}
+
+#canvasContainer{
+  background-color: rgba(240, 248, 255, 0);
+  width: 800px;
+  height: 600px;
+  text-align: center;
+  margin: auto;
+  padding: 50px;
+  position: relative;
+}
+
+canvas {
+  display: block;
+}
+
+.header{
+  font-family: 'Comfortaa', cursive;
+  position:fixed;
+  top: 0px;
+  width: 100%;
+  height: 150px;
+  background:linear-gradient(to bottom, black, rgba(255, 255, 255, 0));
+  display: flex;
+  gap: 20px;
+}
+.textbox{
+  text-decoration: dashed;
+  font-size: 20px;
+  width: auto;
+  color: aliceblue;
+ 
+  border-color: white;
+  border-style:dashed;
+  border-width: 3px;
+   margin-left: auto;
+  margin-right: auto;
+   margin-top: 30px;
+   margin-bottom: auto;
+  padding: 10px;
+}
+.warning{
+  font-family: 'Comfortaa', cursive;
+  width: 40%;
+  text-align: center;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  padding: 30px;
+  border-style: dashed;
+  border-color: black;
+}
+h1{
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 75px;
+  text-align: center;
+  position: relative;
+  color: white;
+  width: 100%;
+  margin-top: 150px;
+ 
+  letter-spacing: 10px;
+}
+
+.words{
+
+  padding: 25px;
+  font-size: 35px;
+  width: auto;
+  color: white;
+  font-family: 'Nanum Pen Script', cursive;
+}
+.line1{
+ 
+  width: auto;
+  position: relative;
+  margin-left: 10%;
+}
+.line2{
+  margin-left: 30%;
+}
+.hidden{
+  text-align: end;
+  color: black;
+  position: fixed;
+  top: 20%;
+  right:5%;
+}
