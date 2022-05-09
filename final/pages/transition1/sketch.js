@@ -1,55 +1,94 @@
 let x
 let y
-let base=[]
+let block=[]
+
+let cx=0
+let cy=0
 
 function preload(){
  ra=loadImage("assets/Ra.gif")
  rd=loadImage("assets/Rd.gif")
  still=loadImage("assets/still.png")
+ bg=loadImage("assets/background.png")
 }
 
 
 function setup() {
-  x=220
-  y=0
+  x=120
+  y=150
   let cnv=createCanvas(800, 600);
   cnv.parent("canvasContainer")
+  fill(255,10)
   p=new character(x,y)
-  P=new platform(0,150,50,20)
-  P2=new platform3(200,200,50,20)
-  P3=new platform(300,250,50,20)
-   P4=new platform(400,300,50,20)
-   P5=new platform(350,170,50,20)
-  for(i=0;i<width/50;i++){
-    base.push(new platform2(0+50*i-10,380,50,20))
-  }
+    base=new platform2(0,1000,2400+windowWidth,20)
+
+    block.push(new platform(20,250,210,30))
+    block.push(new platform(235,370,290,30))
+    block.push(new platform(493,530,160,30))
+
+    block.push(new platform(675,485,25,30))
+    block.push(new platform(670,355,25,30))
+    block.push(new platform(748,300,27,30))
+    block.push(new platform(748,430,27,30))
+
+    
+    block.push(new platform(875,380,245,30))
+    block.push(new platform(1062,480,160,30))
+
+
+    block.push(new platform(1120,630,235,30))
+    block.push(new platform(1430,725,200,30))
+    block.push(new platform(1430,580,130,30))
+    block.push(new platform(1540,655,165,30))
+
+    block.push(new platform(1650,545,115,30))
+    block.push(new platform(1867,850,260,30))
+
+    block.push(new platform2(2190,760,110,30))
+    block.push(new platform(2265,640,120,30))
+    block.push(new platform2(2120,490,250,30))
+    block.push(new platform2(2245,345,105,30))
+    block.push(new platform(1735,160,665,30))
+
+    block.push(new platform2(647,655,270,30))
+    
+    P2=new platform2(647,855,270,30)
+    
+    P1=new platform(20,250,210,30)
+  
 }
 
 function draw() {
-  background(220);
-  text("I haven't finished the graphics yet, but you can already jump on different platforms!",100,100)
+  background(57);
+  
+  // text("I haven't finished the graphics yet, but you can already jump on different platforms!",100,100)
   if(p.x>=300){
-    translate(-p.x+300,0)
+    cx=-p.x+300
   }
   if(p.x<100){
-    translate(100-p.x,0)
+    cx=100-p.x
   }
-  P.display()
-  P.update()
+  if(p.y+p.h>=400){
+    cy=-(p.y+p.h)+400
+  }
+  if(p.y+p.h<100){
+    cy=100-(p.y+p.h)
+  }
+  translate(cx,cy)
+  image(bg,0,0)
+ 
   //console.log(P.onPlatform)
-  
+
+    base.display()
+    base.update()
+//  P1.display()
+for(i=0;i<block.length;i++){
+  //block[i].display()
+  block[i].update()
+}
   P2.display()
   P2.update()
-   P3.display()
-  P3.update()
-  P4.display()
-  P4.update()
-   P5.display()
-  P5.update()
-  for(i=0;i<width/50;i++){
-    base[i].display()
-    base[i].update()
-  }
+ P1.update()
    p.display()
   p.update()
   
@@ -130,7 +169,7 @@ if(this.onPlatform==true&&p.fall==true){
       p.h=0
       p.t=0    
       //p.jump=false
-      p.v1=40 
+      p.v1=50 
     }
   }
 }
@@ -181,7 +220,7 @@ class character{
     this.x=startX
     this.y=startY
     
-    this.g=5
+    this.g=4
     this.v1=30
     this.v2=3
     this.t=0

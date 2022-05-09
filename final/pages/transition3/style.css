@@ -1,8 +1,21 @@
 html, body {
-  margin: 0;
+  background: linear-gradient(to bottom, black 200px,white);
+  margin: auto;
   padding: 0;
 }
 
+img{
+  width: 800px;
+}
+.text{
+ margin: auto;
+ text-align: center;
+  padding: 25px;
+  font-size: 35px;
+  width: auto;
+  color: white;
+  font-family: 'Nanum Pen Script', cursive;
+}
 canvas {
   display: block;
 }

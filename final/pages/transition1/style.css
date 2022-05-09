@@ -1,12 +1,18 @@
-html, body {
-  margin: 0;
-  padding: 0;
+body {
+  background: linear-gradient(to bottom, black 200px,white);
+  margin: auto;
 }
 
 #canvasContainer{
+  position: relative;
+  
   width: 800px;
   height: 600px;
   margin: auto;
+  text-align: center;
+  margin: auto;
+  padding: 150px;
+  position: relative;
 }
 
 canvas {
@@ -36,4 +42,9 @@ canvas {
    margin-top: 30px;
    margin-bottom: auto;
   padding: 10px;
+}
+.img{
+  position: fixed;
+  margin-left: 0px;
+  top: 50%;
 }

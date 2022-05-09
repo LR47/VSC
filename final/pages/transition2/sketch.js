@@ -50,12 +50,13 @@ function draw() {
 }
 
 function mousePressed(){
+  if(dist(mouseX,mouseY,windowWidth/2,200)<30){
   console.log(play)
   play=!play
   if(play==true){
     mySound.play()
   }else{mySound.pause()}
-  
+  }
 }
 function ring(x,y,r,n,rl){
   
