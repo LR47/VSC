@@ -15,6 +15,7 @@ function setup() {
 
 function draw() {
   //background(0,20);
+  // for background: what is reality?
   push()
   fill(0,20)
   noStroke()
@@ -57,8 +58,11 @@ function ring(x,y,r,n,rl){
   
   //x,y=center
   //r=circle r
-  //n=number of arcs
-  //rl=degree of arcs
+  //n=number of arcs of one ring
+  //rl=degree of arcs of one ring
+  // what is reality?
+  //what is reality?
+  //WHAT IS REALITY?
   
   noFill()
   let rg=(360-n*rl)/n
