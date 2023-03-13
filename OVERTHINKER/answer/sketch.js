@@ -10,7 +10,7 @@ let doordes=true
 let mode=true
 
 function preload(){
-  characterimage=loadImage("assets/C.A.Still.gif")
+  //characterimage=loadImage("assets/C.A.Still.gif")
   Doorimg=loadImage("assets/Door.png")
   Keyimg=loadImage("assets/key.png")
   mirror1=loadImage("assets/mirror1.png")

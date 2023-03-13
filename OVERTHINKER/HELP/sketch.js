@@ -1,10 +1,13 @@
 let pieces=[]
 let pieces2=[]
+let pieces3=[]
 
 let p1img=[]
 let p2img=[]
+let p3img=[]
 
 let phase2=false
+let phase3=false
 
 
 function preload(){
@@ -27,6 +30,16 @@ function preload(){
   img27=loadImage("assets/jigsaw27.png")
   img28=loadImage("assets/jigsaw28.png")
   img29=loadImage("assets/jigsaw29.png")
+
+  img31=loadImage("assets/jigsaw31.png")
+  img32=loadImage("assets/jigsaw32.png")
+  img33=loadImage("assets/jigsaw33.png")
+  img34=loadImage("assets/jigsaw34.png")
+  img35=loadImage("assets/jigsaw35.png")
+  img36=loadImage("assets/jigsaw36.png")
+  img37=loadImage("assets/jigsaw37.png")
+  img38=loadImage("assets/jigsaw38.png")
+  img39=loadImage("assets/jigsaw39.png")
 
 
 }
@@ -56,6 +69,16 @@ function setup() {
   p2img.push(img28)
   p2img.push(img29)
 
+  p3img.push(img31)
+  p3img.push(img32)
+  p3img.push(img33)
+  p3img.push(img34)
+  p3img.push(img35)
+  p3img.push(img36)
+  p3img.push(img37)
+  p3img.push(img38)
+  p3img.push(img39)
+
   
   for(let x=0;x<3;x++){
     for(let y=0;y<3;y++){
@@ -72,10 +95,24 @@ function setup() {
     }
   }
 
+  for(let x=0;x<3;x++){
+    for(let y=0;y<3;y++){
+      
+     let j=new jigsaw(175+100*y,175+100*x)
+      pieces3.push(j)
+    }
+  }
+
 }
 
 function draw() {
   background(220);
+  rect(275,275,300,300)
+  strokeWeight(2)
+  line(225,125,225,425)
+  line(325,125,325,425)
+  line(125,225,425,225)
+  line(125,325,425,325)
   for(let i=0;i<pieces.length;i++){
     pieces[i].display()
     pieces[i].move()
@@ -89,6 +126,13 @@ function draw() {
       phase2=true
     }
   if(phase2==true){
+    push()
+    stroke(255)
+    line(225,125,225,425)
+  line(325,125,325,425)
+  line(125,225,425,225)
+  line(125,325,425,325)
+  pop()
     for(let i=0;i<pieces2.length;i++){
     pieces2[i].display()
     pieces2[i].move()
@@ -98,6 +142,36 @@ function draw() {
    } 
     
   }
+  if (pieces2[0].drag==false&&pieces2[2].drag==false&&pieces2[3].drag==false&&pieces2[4].drag==false&&pieces2[5].drag==false&&pieces2[6].drag==false&&pieces2[7].drag==false&&pieces2[8].drag==false&&pieces2[1].drag==false){
+    fill(0)
+    phase3=true
+  }
+
+  if(phase3==true){
+    push()
+    stroke(255)
+    line(225,125,225,425)
+  line(325,125,325,425)
+  line(125,225,425,225)
+  line(125,325,425,325)
+  pop()
+    for(let i=0;i<pieces3.length;i++){
+    pieces3[i].display()
+    pieces3[i].move()
+    pieces3[i].check()
+
+    image(p3img[i],pieces3[i].x-50,pieces3[i].y-50,100,100)
+
+
+   } 
+    if (pieces3[0].drag==false&&pieces3[2].drag==false&&pieces3[3].drag==false&&pieces3[4].drag==false&&pieces3[5].drag==false&&pieces3[6].drag==false&&pieces3[7].drag==false&&pieces3[8].drag==false&&pieces3[1].drag==false){
+    fill(0)
+    text("HELP----PLEH",100,100)
+  }
+  }
+
+  
+
 }
 class jigsaw{
   constructor(dx,dy){
@@ -111,9 +185,10 @@ class jigsaw{
     rectMode(CENTER)
     rect(this.x,this.y,50,50)
   }
-  move(){  if(mouseIsPressed&&dist(this.x,this.y,mouseX,mouseY)<25&&this.drag==true){
+  move(){  if(mouseIsPressed&&dist(this.x,this.y,mouseX,mouseY)<50&&this.drag==true){
     this.x=mouseX
     this.y=mouseY
+    rect(this.x,this.y,110,110)
   }
   }
   check(){
@@ -121,6 +196,7 @@ class jigsaw{
       this.drag=false
       this.x=this.dx
       this.y=this.dy
+      
     }
   }
 }
